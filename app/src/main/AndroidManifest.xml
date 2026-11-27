@@ -2,7 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--
+        Permissions: none required. Room stores the database in the app's private internal
+        storage (/data/data/com.hehe.planduh/databases), so no storage/INTERNET permission is needed.
+        If you later add deadline reminders (notifications), declare POST_NOTIFICATIONS (API 33+)
+        and, for exact alarms, SCHEDULE_EXACT_ALARM.
+    -->
+
     <application
+        android:name=".PlanduhApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
